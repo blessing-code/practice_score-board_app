@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Score Board</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="teamOne">
+            <h1 id="header"> HOME TEAM </h1>
+            <div class="scores" id="home-score"> 0 </div><br>
+            <button id="homeBtnOne"> +1 </button>
+            <button id="homeBtnTwo"> +2 </button>
+            <button id="homeBtnThree"> +3 </button>
+        </div>
+        <!-- button to delete 1 from the scores when click -->
+        <!-- <button id="delete-bnt" onclick="deleteBtn()"> Delete </button> -->
+
+        <div class="teamTwo">
+            <h1 id="header"> AWAY TEAM </h1>
+            <div class="scores" id="away-score"> 0 </div><br>
+            <button id="awayBtnOne"> +1 </button>
+            <button id="awayBtnTwo"> +2 </button>
+            <button id="awayBtnThree"> +3 </button>
+        </div>
+            <br>
+    <div id="resert-button">
+        <button id="resert-bnt" onclick="resert()"> Reset </button>
+    </div>
+    </div>
+    <!-- <button id="resert-bnt" onclick="resert()"> Resert </button> -->
+    <script src="index.js"></script>
+</body>
+</html>

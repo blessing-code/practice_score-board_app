@@ -1,22 +1,20 @@
 
-// function status(){
-//     if(currentHomeScore > currentAwayScore){
-//         currentHomeScore.classList.add(winning);
-//         currentAwayScore.classList.add(loser);
-//     }else if (currentAwayScore > currentHomeScore) {
-//         currentAwayScore.classList.add(winning)
-//         currentHomeScore.classList.add(loser)
-//     } else {
-        
-//     }
-// }
+function scoreStatus(){
+    if(currentHomeScore > currentAwayScore){
+        homeScore.classList.add("winning");
+    }else if (currentAwayScore > currentHomeScore) {
+        awayScore.classList.add("winning");
+    } else {
+        homeScore.classList.remove("winning");
+        awayScore.classList.remove("winning");
+    }
+}
 
 let currentHomeScore = 0;
 
 const addHomeBtnOne = document.getElementById("homeBtnOne");
 const addHomeBtnTwo = document.getElementById("homeBtnTwo");
 const addHomeBtnThree = document.getElementById("homeBtnThree");
-
 // home score
 let homeScore = document.getElementById("home-score");
 
@@ -34,27 +32,25 @@ function addThree() {
     currentHomeScore += 3;
 }
 
-
 addHomeBtnOne.addEventListener("click", function() {
     addOne()
     homeScore.innerText = currentHomeScore;
+    scoreStatus()
 })
 
 
 addHomeBtnTwo.addEventListener("click", function() {
     addTwo()
     homeScore.innerText = currentHomeScore;
+    scoreStatus()
 })
 
 addHomeBtnThree.addEventListener("click", function() {
     addThree()
     homeScore.innerText = currentHomeScore;
+    scoreStatus()
 });
 
-// function to minus 1 form the score
-// function deleteBtn(){
-//     currentHomeScore -= 1;
-// }
 
 
 let currentAwayScore = 0;
@@ -82,16 +78,19 @@ function addAwayThree() {
 addAwayBtnOne.addEventListener("click", function() {
     addAwayOne()
     awayScore.innerText = currentAwayScore;
+    scoreStatus()
 })
 
 addAwayBtnTwo.addEventListener("click", function() {
     addAwayTwo()
     awayScore.innerText = currentAwayScore;
+    scoreStatus()
 })
 
 addAwayBtnThree.addEventListener("click", function() {
     addAwayThree()
     awayScore.innerText = currentAwayScore;
+    scoreStatus()
 });
 
 function resert() {
@@ -100,3 +99,21 @@ function resert() {
     homeScore.innerHTML = currentHomeScore;
     awayScore.innerHTML = currentAwayScore;
 }
+
+let homeDeleteBtn = document.getElementById("home-delete-btn");
+let awayDeleteBtn = document.getElementById("away-delete-btn");
+
+function deleteOne() {
+    currentHomeScore -= 1;
+    currentAwayScore -= 1;
+}
+homeDeleteBtn.addEventListener("click", function() {
+    deleteOne()
+    homeScore.innerText = currentHomeScore;
+})
+
+awayDeleteBtn.addEventListener("click", function() {
+    deleteOne()
+    awayScore.innerText = currentAwayScore;
+})
+
